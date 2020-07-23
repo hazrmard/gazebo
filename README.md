@@ -8,6 +8,10 @@
   * [VM for Gazebo 9, ROS Melodic, Gazebo-ROS plugin](https://www.mathworks.com/ros2_vm_install/v2)
   * [Perform Co-Simulation between Simulink and Gazebo](https://www.mathworks.com/help/robotics/examples/perform-co-simulation-between-simulink-and-gazebo.html)
 
+## Reference
+
+* [Gazebo Simulation Description Format (SDF) specification](http://sdformat.org). This is used to describe model and world files.
+
 
 ## Setup
 
