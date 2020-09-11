@@ -87,18 +87,8 @@
     <state world_name='default'>
       <sim_time>0 0</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1595535602 92402342</wall_time>
+      <wall_time>1597304384 766304884</wall_time>
       <iterations>0</iterations>
-      <model name='box'>
-        <pose frame=''>0.141198 -0.126775 0.5 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.141198 -0.126775 0.5 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-10 -10 -3.74987 0 -0 0</acceleration>
-          <wrench>-10 -10 -3.74987 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -109,14 +99,24 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='octocopter'>
+        <pose frame=''>0.002846 0.00316 0.5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='wholebody'>
+          <pose frame=''>0.002846 0.00316 0.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='quadrotor'>
         <pose frame=''>-0.908023 -2.26733 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
           <pose frame=''>-0.908023 -2.26733 0.182466 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>5.94883 -2.10183 1.00698 -2.48923 0.793794 1.07665</acceleration>
-          <wrench>7.82866 -2.766 1.32518 0 -0 0</wrench>
+          <acceleration>0.978164 0.759299 -7.82765 -0.71783 -0.933378 -2.93884</acceleration>
+          <wrench>1.28726 0.999238 -10.3012 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -125,64 +125,11 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>8.65722 -16.059 8.3735 -0 0.371643 2.02419</pose>
+        <pose frame=''>4.00948 -4.32702 3.63287 0 0.539644 2.25218</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <plugin name='GazeboPlugin' filename='libGazeboCoSimPlugin.so'>
-      <portNumber>14581</portNumber>
-    </plugin>
-    <model name='box'>
-      <pose frame=''>0.141198 -0.126775 0.5 0 -0 0</pose>
-      <static>0</static>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0</mu>
-                <mu2>0</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <model name='quadrotor'>
       <link name='link'>
         <pose frame=''>0 0 0.182466 0 -0 0</pose>
@@ -229,6 +176,93 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>-0.908023 -2.26733 0 0 -0 0</pose>
+    </model>
+    <plugin name='GazeboPlugin' filename='libGazeboCoSimPlugin.so'>
+      <portNumber>14581</portNumber>
+    </plugin>
+    <plugin name='HelloWorld' filename='libhello_world.so'/>
+    <model name='octocopter'>
+      <pose frame=''>0.002846 0.00316 0.5 0 -0 0</pose>
+      <static>0</static>
+      <link name='wholebody'>
+        <inertial>
+          <mass>1.38</mass>
+          <inertia>
+            <ixx>0.114</ixx>
+            <iyy>0.119</iyy>
+            <izz>0.218</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.27</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0</mu>
+                <mu2>0</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.45 0.45 0.27</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='octocopter-imu' type='imu'>
+          <always_on>1</always_on>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <imu>
+            <angular_velocity>
+              <x>
+                <noise type='none'/>
+              </x>
+              <y>
+                <noise type='none'/>
+              </y>
+              <z>
+                <noise type='none'/>
+              </z>
+            </angular_velocity>
+            <linear_acceleration>
+              <x>
+                <noise type='none'/>
+              </x>
+              <y>
+                <noise type='none'/>
+              </y>
+              <z>
+                <noise type='none'/>
+              </z>
+            </linear_acceleration>
+            <angular_velocity/>
+            <linear_acceleration/>
+          </imu>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='VelocitySensor' filename='libvelocity_sensor.so'>
+        <update_rate>1</update_rate>
+      </plugin>
     </model>
   </world>
 </sdf>
