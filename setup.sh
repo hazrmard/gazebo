@@ -3,11 +3,11 @@ source /usr/share/gazebo/setup.sh
 # https://stackoverflow.com/a/9107028/4591810
 SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-if [-z "$MATLAB_GAZEBO_PLUGIN"]
+if [ -z "$MATLAB_GAZEBO_PLUGIN" ]; then
 	export MATLAB_GAZEBO_PLUGIN=~/src/GazeboPlugin/export/lib/
 fi
 
-if [-z "$GAZEBO_MODEL_REPO"]
+if [ -z "$GAZEBO_MODEL_REPO" ]; then
 	export GAZEBO_MODEL_REPO=~/src/gazebo_models/
 fi
 
