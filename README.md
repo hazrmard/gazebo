@@ -15,31 +15,62 @@
 
 ## Setup
 
-Download the VM with gazebo and Matlab gazebo plugin files.
+1. Clone this repository.
 
-Clone this repository.
+```
+git clone https://git.isis.vanderbilt.edu/ahmedi/gazebo.git ~/src/gazebo
+```
 
-Download the model database to make custom worlds.
+2. Download the VM with gazebo and Matlab gazebo plugin files. **OR** clone and build the gazebo plugin source [here](https://git.isis.vanderbilt.edu/ahmedi/gazeboplugin). You can set the plugin path manually, or use the following steps to have `setup.sh` do it.
+
+```
+# Download gazebo plugin (if not using the MATLAB Gazebo Virtual Machine)
+git clone https://git.isis.vanderbilt.edu/ahmedi/gazeboplugin.git ~/src/GazeboPlugin
+# Build the plugin
+cd ~/src/GazeboPlugin
+mkdir build
+cd build
+cmake ..
+make
+```
+
+3. Optionally, download the to make custom worlds.
 
 ```
 # Download model database:
 git clone https://github.com/osrf/gazebo_models ~/src/
 ```
 
-Set 2 environment variables (in `.bashrc`):
+4. Set 2 environment variables (in `.bashrc`):
 
 ```
 export MATLAB_GAZEBO_PLUGIN= 	# Path to GazeboPlugin/export/lib/
-export GAZEBO_MODELS=		# Path to gazebo model database repository
+export GAZEBO_MODELS=		      # Path to gazebo model database repository
 ```
 
-Call the setup script:
+5. Call the setup script:
 
 ```
-source setup.sh
+source ~/src/gazebo/setup.sh  # or whatever the path is to setup.sh
 ```
 
-The last 2 steps can be put in the `bashrc` file.
+6. Run gazebo
+
+```
+# With GUI
+gazebo path/to/this/repo's/test.world  # or any world file
+# OR without GUI
+gzserver path/to/this/repo's/test.world
+```
+
+**Note**: The steps 4-5 can be put in the `bashrc` file for automatic setup at startup.
+
+```
+# for example
+export MATLAB_GAZEBO_PLUGIN=~/GazeboPlugin/export/lib/
+export GAZEBO_MODELS=~/src/gazebo_models/
+source ~/PATH/TO/setup.sh
+```
 
 
 ## Gazebo docs
