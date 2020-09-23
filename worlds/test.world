@@ -85,10 +85,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>0 0</sim_time>
+      <sim_time>10 40000000</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1597304384 766304884</wall_time>
-      <iterations>0</iterations>
+      <wall_time>1600891374 682942720</wall_time>
+      <iterations>10040</iterations>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -100,23 +100,23 @@
         </link>
       </model>
       <model name='octocopter'>
-        <pose frame=''>0.002846 0.00316 0.5 0 -0 0</pose>
+        <pose frame=''>139.848 0.00316 0.135 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='wholebody'>
-          <pose frame=''>0.002846 0.00316 0.5 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -0 0 -0 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <pose frame=''>139.848 0.00316 0.135 0 -0 0</pose>
+          <velocity>19.8309 0 0 0 -0 0</velocity>
+          <acceleration>-32.8986 0 -0 0 -0 0</acceleration>
+          <wrench>-45.4 0 -0 0 -0 0</wrench>
         </link>
       </model>
       <model name='quadrotor'>
-        <pose frame=''>-0.908023 -2.26733 0 0 -0 0</pose>
+        <pose frame=''>-0.908011 -2.26734 0 -2e-06 -2e-06 0.002043</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-0.908023 -2.26733 0.182466 0 -0 0</pose>
+          <pose frame=''>-0.908011 -2.26734 0.182466 -2e-06 -2e-06 0.002043</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.978164 0.759299 -7.82765 -0.71783 -0.933378 -2.93884</acceleration>
-          <wrench>1.28726 0.999238 -10.3012 0 -0 0</wrench>
+          <acceleration>8.39884 -4.82255 8.07342 -2.20417 0.828527 -0.132659</acceleration>
+          <wrench>11.0529 -6.34648 10.6246 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -125,7 +125,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>4.00948 -4.32702 3.63287 0 0.539644 2.25218</pose>
+        <pose frame=''>13.1393 4.16024 8.64437 0 0.615644 -2.81901</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

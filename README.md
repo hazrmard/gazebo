@@ -15,6 +15,12 @@
 
 ## Setup
 
+Download the VM with gazebo and Matlab gazebo plugin files.
+
+Clone this repository.
+
+Download the model database to make custom worlds.
+
 ```
 # Download model database:
 git clone https://github.com/osrf/gazebo_models ~/src/
@@ -25,7 +31,7 @@ git clone https://github.com/osrf/gazebo_models ~/src/
 
 These docs apply to the VM.
 
-Gazebo variables can be initialized by running `/usr/share/gazebo/setup.sh`.
+Gazebo variables can be initialized by running `/usr/share/gazebo/setup.sh`. You can add that to your `.bashrc`. Additional variables and plugin paths in this repo can be added to them by running the local [`setup.sh`](./setup.sh) script.
 
 Gazebo worlds located in `/usr/share/gazebo-9/worlds`.
 

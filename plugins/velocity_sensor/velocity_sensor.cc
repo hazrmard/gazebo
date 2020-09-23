@@ -52,7 +52,7 @@ namespace gazebo
     void OnUpdate()
     {
       ignition::math::v4::Vector3d vel = this->link->WorldLinearVel();
-      std::cerr << "Update: " << vel << "\n";
+      // std::cerr << "Update: " << vel << "\n";
       msgs::Vector3d msg;
       msgs::Set(&msg, vel);
       this->pub->Publish(msg);
