@@ -26,10 +26,25 @@ Download the model database to make custom worlds.
 git clone https://github.com/osrf/gazebo_models ~/src/
 ```
 
+Set 2 environment variables (in `.bashrc`):
+
+```
+export MATLAB_GAZEBO_PLUGIN= 	# Path to GazeboPlugin/export/lib/
+export GAZEBO_MODELS=		# Path to gazebo model database repository
+```
+
+Call the setup script:
+
+```
+source setup.sh
+```
+
+The last 2 steps can be put in the `bashrc` file.
+
 
 ## Gazebo docs
 
-These docs apply to the VM.
+These docs apply to the VM. If you are using a custom installation, the paths may vary.
 
 Gazebo variables can be initialized by running `/usr/share/gazebo/setup.sh`. You can add that to your `.bashrc`. Additional variables and plugin paths in this repo can be added to them by running the local [`setup.sh`](./setup.sh) script.
 
