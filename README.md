@@ -73,6 +73,15 @@ source ~/PATH/TO/setup.sh
 ```
 
 
+### SSH
+
+Using an x-server like [vcXsrv](https://sourceforge.net/projects/vcxsrv/). Uncheck the "Use native OpenGL" option. Also unset the `LIBGL_ALWAYS_INDIRECT` variable:
+
+```
+unset LIBGL_ALWAYS_INDIRECT
+```
+
+
 ## Gazebo docs
 
 These docs apply to the VM. If you are using a custom installation, the paths may vary.
